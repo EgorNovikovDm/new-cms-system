@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PostFactory extends Factory
@@ -23,6 +24,10 @@ class PostFactory extends Factory
     {
         return [
             //
+            'user_id' => User::factory(),
+            'title' => $this->faker->title,
+            'post_image' => $this->faker->imageUrl(),
+            'body' => $this->faker->text,
         ];
     }
 }
